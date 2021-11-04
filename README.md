@@ -1,0 +1,25 @@
+**This is a small app Ciphering CLI Tool! 
+Welcome! 🚀** 
+
+To run the code type in a terminal: 'node index ' 
+after that you can write the encoding according 
+to the following rules:
+```sh
+1. -c, --config: config for ciphers Config is a string with pattern {XY(-)}n, where:
+    X is a cipher mark:
+        C - Caesar cipher (with shift 1)
+        A - Atbash cipher
+        R - ROT-8 cipher
+```      
+```sh
+    Y is flag of encoding or decoding 
+    (mandatory for Caesar cipher and ROT-8 cipher and should not be passed Atbash cipher)
+        1 - encoding (move to the right bij alphabetic order)
+        0 - decoding (move to the left bij alphabetic order)
+```  
+```sh
+2. -i, --input: a path to input file
+3. -o, --output: a path to output file
+```  
+For example, config "C1-C1-R0-A" means 
+"encode by Caesar cipher => encode by Caesar cipher => decode by ROT-8 => use Atbash"
