@@ -1,6 +1,6 @@
 **This is a small app Ciphering CLI Tool! 
 Welcome! 🚀** 
-
+ 
 To run the code type in a terminal: 'node index ' 
 after that you can write the encoding according 
 to the following rules:
