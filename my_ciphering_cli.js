@@ -30,7 +30,7 @@ const rewriteText = function (){
     const input = resMainString.includes('-i') ? resMainString[resMainString.indexOf('-i')+1] : '';
     const output = resMainString.includes('-o') ? resMainString[resMainString.indexOf('-o')+1] : '';
 
-    fs.stat(output, (err) => {
+    fs.statSync(output, (err) => {
         if (err) {
             errorExit(`File ${output} not found`, 7)
         }
