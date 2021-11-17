@@ -29,7 +29,6 @@ for (let i = 0; i < resMainString.length; i += 2) {
 //____________________Main function____________________
 
 const rewriteText = function (){
-    console.log(resMainString);
     const coding = resMainString[resMainString.indexOf('-c') + 1].split('-');
 
     const input = resMainString.includes('-i') ? resMainString[resMainString.indexOf('-i')+1] : '';
@@ -50,7 +49,6 @@ const rewriteText = function (){
         ? codeStreamCR(transformStreamC, el) : el[0] === 'R'
             ? codeStreamCR(transformStreamR, el) : codeStreamA(transformStreamA, el))
 
-    console.log(typeof output);
     const writeStream = output ? fs.createWriteStream(output, {'flags': 'a'}) : process.stdout;
 
     pipeline( readStream, ...transformStreamCRA, writeStream, err => {
