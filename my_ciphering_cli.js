@@ -29,18 +29,20 @@ for (let i = 0; i < resMainString.length; i += 2) {
 //____________________Main function____________________
 
 const rewriteText = function (){
-
+    console.log(resMainString);
     const coding = resMainString[resMainString.indexOf('-c') + 1].split('-');
-    // console.log(coding);
 
     const input = resMainString.includes('-i') ? resMainString[resMainString.indexOf('-i')+1] : '';
     const output = resMainString.includes('-o') ? resMainString[resMainString.indexOf('-o')+1] : '';
 
-    fs.statSync(output, (err) => {
-        if (err) {
+
+    if (output) {
+        try {
+            fs.statSync(output);
+        } catch (e) {
             errorExit(`File ${output} not found`, 7)
         }
-    })
+    }
 
     const readStream = input ? fs.createReadStream(input, 'utf8') : process.stdin;
 
@@ -48,10 +50,11 @@ const rewriteText = function (){
         ? codeStreamCR(transformStreamC, el) : el[0] === 'R'
             ? codeStreamCR(transformStreamR, el) : codeStreamA(transformStreamA, el))
 
-    const writeStream = output !=='' ? fs.createWriteStream(output, {'flags': 'a'}) : process.stdout;
+    console.log(typeof output);
+    const writeStream = output ? fs.createWriteStream(output, {'flags': 'a'}) : process.stdout;
 
     pipeline( readStream, ...transformStreamCRA, writeStream, err => {
-        if (err) errorExit(`Error: File ${err.path} not found`, 8)
+        if (err) errorExit(`Error: File ${err.path} not found`, 8);
     })
 
 
