@@ -13,7 +13,13 @@ const mainString = process.argv.slice(2);
 
 //________________ check mainString_____________________
 
-const resMainString = mainString.map(el => (el === '--config') ? el ='-c' : el);
+const resMainString = mainString.map(el => {
+    (el === '--config') ? el = '-c' : el;
+    (el === '--input') ? el = '-i' : el;
+    (el === '--output') ? el = '-o' : el;
+    return el;
+});
+
 checkMainString(resMainString);
 for (let i = 0; i < resMainString.length; i += 2) {
     checkStringCIO(resMainString[i]);
