@@ -20,9 +20,9 @@ const resMainString = mainString.map(el => {
     return el;
 });
 
-checkMainString(resMainString);
+checkMainString(resMainString, errorExit);
 for (let i = 0; i < resMainString.length; i += 2) {
-    checkStringCIO(resMainString[i]);
+    checkStringCIO(resMainString[i], errorExit);
 }
 
 
