@@ -37,3 +37,8 @@ For example, config "C1-C1-R0-A" means
 En example of whole line of config:
         node my_ciphering_cli -c "C1-C1-R0-A" -i "./input.txt" -o "./output.txt"
 ```
+
+```shell
+To run all tests write in Terminal: npm run test
+To check tests coverage write in Terminal: jest --coverage
+```
