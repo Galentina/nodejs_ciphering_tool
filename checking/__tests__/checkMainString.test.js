@@ -1,5 +1,4 @@
 const checkMainString = require('./../checkMainString');
-// const errorExit = require("../errorExit");
 
 describe ('mainString testing', () =>{
     test('should be defined', () => {

@@ -1,6 +1,5 @@
 const codeStreamCR = require('./../codeStreamA');
 const Transform = require('stream').Transform;
-const { PassThrough } = require('stream')
 
 describe("codeStreamA testing", () => {
     test('should be defined', () => {

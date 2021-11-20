@@ -1,6 +1,5 @@
 const codeStreamA = require('./../codeStreamA');
 const Transform = require('stream').Transform;
-const { PassThrough } = require('stream')
 
 describe("codeStreamA testing", () => {
     test('should be defined', () => {
@@ -8,7 +7,7 @@ describe("codeStreamA testing", () => {
     });
 
     let fn = jest.fn();
-    let fn1 = jest.fn();
+
     let fun;
     beforeEach(() => {
         fun = new Transform();
