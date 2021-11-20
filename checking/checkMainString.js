@@ -23,7 +23,6 @@ const checkMainString = function (mainString, errorExit) {
     else if (res === false && mainString) {
         return errorExit('Config is not valid. Please check.', 5);
     }
-
     else return true;
 };
 

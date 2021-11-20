@@ -66,7 +66,6 @@ describe ('mainString testing', () =>{
     test.each([arg1, arg2, arg3, arg4, arg5]
     ) ('should return true', (data) => {
         checkMainString(data,fn);
-
         expect(fn).toHaveReturnedWith(undefined);
     })
 })
