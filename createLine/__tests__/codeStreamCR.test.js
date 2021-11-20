@@ -1,10 +1,10 @@
-const codeStreamA = require('./../codeStreamA');
+const codeStreamCR = require('./../codeStreamA');
 const Transform = require('stream').Transform;
 const { PassThrough } = require('stream')
 
 describe("codeStreamA testing", () => {
     test('should be defined', () => {
-        expect(codeStreamA).toBeDefined();
+        expect(codeStreamCR).toBeDefined();
     });
 
     let fn = jest.fn();
@@ -16,24 +16,24 @@ describe("codeStreamA testing", () => {
 
     test.each([fn]
     )('should called', (data ) => {
-        codeStreamA(fn);
-        expect(codeStreamA(fn)).isPrototypeOf('object');
+        codeStreamCR(fn);
+        expect(codeStreamCR(fn)).isPrototypeOf('object');
     });
 
     test('should be defined', () => {
-        expect(codeStreamA).toBeDefined();
+        expect(codeStreamCR).toBeDefined();
     });
 
     test('return object has method _transform', () => {
-        expect(codeStreamA()._transform).toBeDefined();
+        expect(codeStreamCR()._transform).toBeDefined();
     });
 
     test('return object instance of Transform Class', () => {
-        expect(codeStreamA(fn) instanceof Transform ).toBe(true);
+        expect(codeStreamCR(fn) instanceof Transform ).toBe(true);
     });
 
     test('transform function was called', () => {
-        codeStreamA(fn)._transform('','utf8', x=>x)
+        codeStreamCR(fn)._transform('','utf8', x=>x)
         expect(fn.mock.calls.length).toBe(1);
     });
 });
